@@ -1,0 +1,62 @@
+body{
+  background-color: #FA7070;
+}
+/* #textarea{
+  width: 686px;
+  height: 400px;
+} */
+/* navbar */
+.navbar
+{
+  background-color: #4f4d59;
+  text-align: center;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.navbar-brand{
+  font-family: Dancing Script;
+  font-weight: 700;
+  font-size: 30px;
+  color: #f87537;
+  padding-left: 22%;
+}
+.nav-link{
+  color: #f87537;
+  margin-right: 25px;
+}
+/* search bar size */
+.d-flex{
+  width: 650px;
+  /* margin-right: 30%; */
+}
+/* H3 first  */
+.first-h3{
+  font-family: Montserrat;
+  font-weight: bolder;
+  color: #fff;
+  padding-top: 30px;
+  padding-bottom: 70px;
+  padding-left: 15%;
+}
+/* card */
+.card
+{
+  background-color: #EEE3CB;
+}
+.card-title
+{
+  font-family: Ubuntu;
+}
+.title-input
+{
+  margin-left: 25px;
+}
+/* H3-second */
+.second-h3{
+  font-family: Montserrat;
+  font-weight: bolder;
+  color: #fff;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40%;
+}
