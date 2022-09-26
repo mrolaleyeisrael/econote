@@ -1,7 +1,7 @@
-let boldBtn= document.getElementById('bold');
+let boldBtn = document.getElementById('bold');
 let copyBtn = document.getElementById('copy');
 let underlineBtn = document.getElementById("underline");
-let text=document.getElementById('textarea');
+let text = document.getElementById('textarea');
 let addBtn = document.getElementById("add");
 let title = document.getElementById("title");
 
@@ -19,6 +19,27 @@ text.addEventListener("change", (e) => {
 title.addEventListener("change", (e) => {
 	titleInput = e.target.value.trim();
 });
+
+
+
+function display() {
+	let notesToBeDisplay = "";
+	notes.forEach((element, index) => {
+		notesToBeDisplay += `
+    <div class="noteCard my-3 mx-3 card" id=${index} onclick="switchCase(this.id)" >
+		<div class="card-body">
+    <h5 class='card-title' >${element.title}</h5>
+    <p class='card-text'>${truncate(element.summary, 50)}</p>
+		<button class="btn btn-primary">Delete Note</button>
+		</div>
+    </div>`;
+	});
+
+	if (notes.length !== 0) {
+		document.getElementById("notes").innerHTML = notesToBeDisplay;
+	}
+}
+
 
 
 //! Save Button handler
@@ -46,16 +67,16 @@ console.log(notesToAdd)
 
 // let textArea = document.getElementById("textarea");
 
-copyBtn.onclick = function(){
+copyBtn.onclick = function () {
 	textarea.select();
-    document.execCommand('copy');
-    
+	document.execCommand('copy');
+
 }
 
- boldBtn.onclick = function() {
- 	textarea.style.fontWeight ="900";
- 	
- }
+boldBtn.onclick = function () {
+	textarea.style.fontWeight = "900";
+
+}
 
 
 //! Notes Added Displayed
@@ -63,20 +84,7 @@ function truncate(str, n) {
 	return str?.length > n ? str.substr(0, n - 1) + " ..." : str;
 }
 
-function display() {
-	let notesToBeDisplay = "";
-	notes.forEach((element, index) => {
-		notesToBeDisplay += `
-    <div class="card" id=${index} onclick="switchCase(this.id)" >
-    <span>${element.title}</span>
-    <p>${truncate(element.summary, 50)}</p>
-    </div>`;
-	});
 
-	if (notes.length !== 0) {
-		document.getElementById("display-notes").innerHTML = notesToBeDisplay;
-	}
-}
 
 
 //! UnderLine
