@@ -53,7 +53,6 @@ copyBtn.onclick = function(){
 }
 
  boldBtn.onclick = function() {
- 	
  	textarea.style.fontWeight ="900";
  	
  }
@@ -82,41 +81,26 @@ function display() {
 
 //! UnderLine
 function underLineFunc() {
-	let selectedText = window.getSelection().toString();
-	// console.log(selectedText);
-	if (selectedText === "") {
-		alert("❌ Text Not Selected ❌");
-	} else if (selectedText.includes("<u>")) {
-		let newText = selectedText.replace("<u>", "");
-		newText = newText.replace("</u>", "");
-		textAreaInput = textAreaInput.replace(selectedText, newText);
-		// textAreaInput = newText;
-	} else {
-		let newText = `<u>${selectedText}</u>`;
-		textAreaInput = textAreaInput.replace(selectedText, newText);
-		// textAreaInput = newText;
-	}
+	textarea.style.textDecoration = "underline";
+	
+	// let selectedText = window.getSelection().toString();
+	// // console.log(selectedText);
+	// if (selectedText === "") {
+	// 	alert("❌ Text Not Selected ❌");
+	// } else if (selectedText.includes("<u>")) {
+	// 	let newText = selectedText.replace("<u>", "");
+	// 	newText = newText.replace("</u>", "");
+	// 	textAreaInput = textAreaInput.replace(selectedText, newText);
+	// 	// textAreaInput = newText;
+	// } else {
+	// 	let newText = `<u>${selectedText}</u>`;
+	// 	textAreaInput = textAreaInput.replace(selectedText, newText);
+	// 	// textAreaInput = newText;
+	// }
 }
 
 underlineBtn.addEventListener("click", underLineFunc);
 
-//! Checking KeyPress of Ctrl + B & Ctrl + U
-let keysPressed = {};
-
-text.addEventListener("keydown", (event) => {
-	keysPressed[event.keyCode] = true;
-
-	if (keysPressed["17"] && event.keyCode === 66) {
-		// alert(event.key);
-		boldFunc();
-		// console.log("Ctrl + B");
-	}
-	if (keysPressed["17"] && event.keyCode === 85) {
-		// alert(event.key);
-		underLineFunc();
-		// console.log("Ctrl + B");
-	}
-});
 
 
 
