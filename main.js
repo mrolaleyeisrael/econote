@@ -82,21 +82,6 @@ function display() {
 //! UnderLine
 function underLineFunc() {
 	textarea.style.textDecoration = "underline";
-	
-	// let selectedText = window.getSelection().toString();
-	// // console.log(selectedText);
-	// if (selectedText === "") {
-	// 	alert("❌ Text Not Selected ❌");
-	// } else if (selectedText.includes("<u>")) {
-	// 	let newText = selectedText.replace("<u>", "");
-	// 	newText = newText.replace("</u>", "");
-	// 	textAreaInput = textAreaInput.replace(selectedText, newText);
-	// 	// textAreaInput = newText;
-	// } else {
-	// 	let newText = `<u>${selectedText}</u>`;
-	// 	textAreaInput = textAreaInput.replace(selectedText, newText);
-	// 	// textAreaInput = newText;
-	// }
 }
 
 underlineBtn.addEventListener("click", underLineFunc);
